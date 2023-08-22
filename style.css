@@ -35,4 +35,16 @@ h2{
 
 button{
     margin: 40px;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    background-color: #9F68E0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: medium;
+}
+
+button:hover{
+    cursor: pointer;
 }
