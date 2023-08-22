@@ -1,12 +1,19 @@
-const chiste = document.querySelector('#chiste')
+const joke = document.querySelector('#chiste')
+const button = document.querySelector("#btn")
 
-fetch('https://v2.jokeapi.dev/joke/Any?lang=es&type=single')
+const changeJoke = () => {
+    fetch('https://v2.jokeapi.dev/joke/Any?type=single')
     .then((response) => response.json())
     .then((data) => {
         console.log(data)
-        chiste.innerHTML = data.joke
+        joke.innerHTML = data.joke
     })
     .catch((error) => {
-        chiste.textContent = 'Ha ocurrido un error, vuelva a generar otro chiste.'
+        joke.textContent = 'Ha ocurrido un error, vuelva a generar otro chiste.'
         console.error(error)
     })
+}
+
+changeJoke();
+
+button.addEventListener("click", () => changeJoke())
